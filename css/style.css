@@ -1,0 +1,5 @@
+.calendar {
+  width: 750px; }
+
+.fc-day:hover {
+  cursor: pointer; }
