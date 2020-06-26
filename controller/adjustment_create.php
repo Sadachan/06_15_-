@@ -79,6 +79,7 @@
                   $end=$rows[$k]['end'];
                   $end_h=substr($end,0,2);
                   $end_m=substr($end,3,2);
+                  if($noyetFlag=='on'){
                   //時間を比較して予定ありのところは塗りつぶす
                   if($start_h>$j){
                     echo '<td class="td_'.$year.'_'.$month.'_'.$day.'">'.$year.'/'.$month.'/'.$day.'</td>';
@@ -93,8 +94,11 @@
                       }
                     }
                   }
-                  $noyetFlag='off';
                   $judge='on';
+                  }else{
+
+                  }
+                $noyetFlag='off';
                 }else{
                   //echo '<td>'.$year.'/'.$month.'/'.$day.'</td>';
                 }
@@ -104,7 +108,7 @@
           if($judge=='on'){
             
           }else{
-            echo '<td class="td_'.$year.'_'.$month.'_'.$day.'">'.$year.'/'.$month.'/'.$day.'</td>';
+            echo '<td class="td_'.$year.'_'.$month.'_'.$day.'">'.$year.'/:::'.$month.'/'.$day.'</td>';
           }
         // }
         ?>
